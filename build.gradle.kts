@@ -71,14 +71,7 @@ allprojects {
             options.compilerArgs.addAll(listOf("-parameters", "-Xlint:all,-serial,-processing"))
             dependsOn("spotlessApply")
         }
-//        статический анализатор кода
-        apply<name.remal.gradle_plugins.sonarlint.SonarLintPlugin>()
-        configure<SonarLintExtension> {
-            nodeJs {
-                detectNodeJs = false
-                logNodeJsNotFound = false
-            }
-        }
+
 //        форматирование кода
         apply<com.diffplug.gradle.spotless.SpotlessPlugin>()
         configure<com.diffplug.gradle.spotless.SpotlessExtension> {
